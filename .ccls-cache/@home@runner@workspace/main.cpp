@@ -77,7 +77,7 @@ void addAtHead(Node*& head, float rating, string comment) {
   head = newNode;
 }
 
-Void addAtTail(Node*& head, float rating, string comment){
+void addAtTail(Node*& head, float rating, string comment){
   Node* newNode = new Node;
   newNode->rating = rating;
   newNode->comment = comment;
@@ -85,7 +85,7 @@ Void addAtTail(Node*& head, float rating, string comment){
   if (!head) {
     head = newNode;
     return;
-  }
+
   Node* current = head;
   while (current->next) 
     current = current->next;
@@ -97,7 +97,7 @@ Void addAtTail(Node*& head, float rating, string comment){
      return;
    }
    Node* current = head; 
-   int count - 0;
+   int count = 0;
    float total =0;
    while (current) {
      cout << "    > Review #"  << ++count << ": " << current->rating << " - " << current->comment << "\n";
