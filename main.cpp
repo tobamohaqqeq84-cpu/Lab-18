@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 // each node holds a rating and a comment.
@@ -35,7 +36,7 @@ int main() {
       cout << "Enter review rating 0-5: "; // asks for review info.
       cin >> rating; 
       cin.ignore();
-      cout << "Enter review comment: ";
+      cout << "Enter review comments: ";
       getline(cin, comment);
 
 
@@ -44,7 +45,7 @@ int main() {
       else
         addAtTail(head, rating, comment);
 
-      cout << "Enter another review? (Y/N): ";
+      cout << "Enter another review? Y/N: ";
       cin >> again;
       cin.ignore();
         }
@@ -54,9 +55,10 @@ int main() {
     cout << "Outputting all reviews:\n";
     outputList(head);
 
+    //deletes all the nodes in the list.
     Node* current = head;
     while (current) {
-      Node * temp =current;
+      Node * temp = current;
       current = current->next;
       delete temp; 
     }
