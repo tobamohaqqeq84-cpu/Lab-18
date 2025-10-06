@@ -23,4 +23,6 @@ int main(){
     float rating;
     string comment;
          }
-cout
+cout << "Which linked list Method should we use?\n";
+cout << [1] Head << endl;
+cout <<
