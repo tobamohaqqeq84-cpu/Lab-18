@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+
 using namespace std;
 
 // each node holds a rating and a comment.
@@ -64,5 +65,48 @@ int main() {
     }
 
     head = nullptr;
+  
   return 0;
   }
+
+void addAtHead(Node*& head, float rating, string comment) {
+  Node* newNode = new Node;
+  newNode->rating = rating;
+  newNode->comment = comment;
+  newNode->next = head;
+  head = newNode;
+}
+
+Void addAtTail(Node*& head, float rating, string comment){
+  Node* newNode = new Node;
+  newNode->rating = rating;
+  newNode->comment = comment;
+  newNode->next = nullptr;
+  if (!head) {
+    head = newNode;
+    return;
+  }
+  Node* current = head;
+  while (current->next) 
+    current = current->next;
+    current->next = newNode;
+  }
+ void outputList (Node* head){
+   if(!head){
+     cout << "No reviews yet.\n";
+     return;
+   }
+   Node* current = head; 
+   int count - 0;
+   float total =0;
+   while (current) {
+     cout << "    > Review #"  << ++count << ": " << current->rating << " - " << current->comment << "\n";
+   toatl += current->rating;
+       current = current->next;
+   }
+   if (count > 0){
+     cout << fixed << setprecision(5);
+     cout << "    > Average: " << (total/count) << endl;
+   }
+   
+ }
