@@ -17,7 +17,7 @@ struct Node {
 // function prototypes.
 void addAtHead(Node*& head, float rating, string comment);
 void addAtTail(Node*& head, float rating, string comment);
-void outputList(Node* head);
+void outputList(Node* head); 
 
 int main() {
     Node* head = nullptr; // stars with empty list 
@@ -78,35 +78,38 @@ void addAtHead(Node*& head, float rating, string comment) {
 }
 
 void addAtTail(Node*& head, float rating, string comment){
+  
   Node* newNode = new Node;
   newNode->rating = rating;
   newNode->comment = comment;
   newNode->next = nullptr;
   if (!head) {
     head = newNode;
-    return;
+    return;}
 
   Node* current = head;
   while (current->next) 
     current = current->next;
-    current->next = newNode;
+    
   }
  void outputList (Node* head){
-   if(!head){
+     if(!head){
      cout << "No reviews yet.\n";
-     return;
-   }
+     return;}
+   
    Node* current = head; 
    int count = 0;
    float total =0;
+   
    while (current) {
-     cout << "    > Review #"  << ++count << ": " << current->rating << " - " << current->comment << "\n";
-   total += current->rating;
+     cout << "    > Review #"  << ++count << ": " << current->rating << " : " <<            current->comment << "\n";
+     
+       total += current->rating;
        current = current->next;
    }
    if (count > 0){
-     cout << fixed << setprecision(5);
-     cout << "    > Average: " << (total/count) << endl;
+      cout << fixed << setprecision(5);
+      cout << "    > Average: " << (total/count) << endl;
    }
    
  }
