@@ -6,12 +6,21 @@
 #include <string>
 using namespace std;
 
-    struct Node {
+struct Node {
       float rating;
       string comment;
       Node next;
                 };
 
+void addAtHead (Node head, float rating, string comment);
+void addAtTail (Node head, float rating, string comment);
+void printlist (Node head);
 
-    }
-
+int main(){
+    Node head = NULL;
+    int choice;
+    char again;
+    float rating;
+    string comment;
+         }
+cout
