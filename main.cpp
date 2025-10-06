@@ -101,7 +101,7 @@ Void addAtTail(Node*& head, float rating, string comment){
    float total =0;
    while (current) {
      cout << "    > Review #"  << ++count << ": " << current->rating << " - " << current->comment << "\n";
-   toatl += current->rating;
+   total += current->rating;
        current = current->next;
    }
    if (count > 0){
