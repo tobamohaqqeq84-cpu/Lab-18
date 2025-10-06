@@ -13,9 +13,9 @@ struct Node {
       Node* next; // pointer to next node in the list.
             };
 // function prototypes.
-void addAtHead (Node*& head, float rating, string comment);
-void addAtTail (Node*& head, float rating, string comment);
-void outputList (Node* head);
+void addAtHead(Node*& head, float rating, string comment);
+void addAtTail(Node*& head, float rating, string comment);
+void outputList(Node* head);
 
 int main() {
     Node* head = nullptr; // stars with empty list 
@@ -23,10 +23,10 @@ int main() {
     char again;
     float rating;
     string comment;
-         }
-    cout << "Which linked list Method should we use?" << endl;
-    cout << "    [1] New nodes are added at the head of linked list."; <<endl;
-    cout << "    [2] New nodes are added at the tail of linked list.";
+         
+    cout << "Which linked list Method should we use?\n"; 
+    cout << "    [1] New nodes are added at the head of linked list.\n";
+    cout << "    [2] New nodes are added at the tail of linked list.\n";
     cout << "    Choice: ";
     cin >> choice;
     cin.ignore();
@@ -48,5 +48,19 @@ int main() {
       cin >> again;
       cin.ignore();
         }
-    while (again == 'Y' || again == 'y') //loop until user says no.
-       cout << "Outputting all reviews:\n";
+    while (again == 'Y' || again == 'y'); //loop until user says no.
+
+    //shows all the reviews  
+    cout << "Outputting all reviews:\n";
+    outputList(head);
+
+    Node* current = head;
+    while (current) {
+      Node * temp =current;
+      current = current->next;
+      delete temp; 
+    }
+
+    head = nullptr;
+  return 0;
+  }
